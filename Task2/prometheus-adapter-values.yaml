@@ -1,0 +1,12 @@
+prometheus:
+  url: http://prometheus-server.monitoring.svc.cluster.local
+  port: 80
+
+rules:
+  default: true
+  external:
+    - seriesQuery: 'promhttp_metric_handler_requests_total{job="test-app",code="200"}'
+      name:
+        matches: ".*"
+        as: "http_requests_per_second"
+      metricsQuery: 'sum(promhttp_metric_handler_requests_total{job="test-app",code="200"})'
