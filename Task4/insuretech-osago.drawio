@@ -1,0 +1,145 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="SveFb5IS6NJhSykg4a9Y">
+    <mxGraphModel dx="1215" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="webapp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" value="Веб-приложение&#xa;(клиенты)" vertex="1">
+          <mxGeometry height="60" width="140" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="coreapp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="core-app&#xa;(монолит)" vertex="1">
+          <mxGeometry height="60" width="140" x="280" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="coredb" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="PostgreSQL&#xa;(core-app)" vertex="1">
+          <mxGeometry height="70" width="100" x="280" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="outbox" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Outbox table" vertex="1">
+          <mxGeometry height="50" width="120" x="420" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="outboxprocessor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Outbox Processor" vertex="1">
+          <mxGeometry height="50" width="140" x="420" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="clientinfo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="client-info" vertex="1">
+          <mxGeometry height="60" width="140" x="280" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="clientdb" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="PostgreSQL&#xa;(client-info)" vertex="1">
+          <mxGeometry height="70" width="100" x="420" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;" value="Apache Kafka" vertex="1">
+          <mxGeometry height="60" width="160" x="660" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="topic1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;" value="topic: products-updated" vertex="1">
+          <mxGeometry height="40" width="160" x="660" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="topic2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;" value="topic: insurance-created" vertex="1">
+          <mxGeometry height="40" width="160" x="660" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="topic3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;" value="topic: osago-result" vertex="1">
+          <mxGeometry height="40" width="160" x="660" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="osagoaggregator" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="osago-aggregator" vertex="1">
+          <mxGeometry height="60" width="160" x="660" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="osagoDb" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="PostgreSQL&#xa;(osago-aggregator)" vertex="1">
+          <mxGeometry height="70" width="110" x="820" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="aggregator" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="ins-product-&#xa;aggregator" vertex="1">
+          <mxGeometry height="60" width="160" x="660" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="settlement" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="ins-comp-&#xa;settlement" vertex="1">
+          <mxGeometry height="60" width="140" x="960" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="settlementdb" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="PostgreSQL&#xa;(settlement)" vertex="1">
+          <mxGeometry height="70" width="100" x="960" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="insurers" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" value="Страховые компании&#xa;(10 партнёров)" vertex="1">
+          <mxGeometry height="60" width="160" x="960" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="ratelimit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Rate Limiting" vertex="1">
+          <mxGeometry height="40" width="100" x="160" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="circuitbreaker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Circuit Breaker&#xa;+ Timeout" vertex="1">
+          <mxGeometry height="50" width="120" x="820" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="retry" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Retry" vertex="1">
+          <mxGeometry height="40" width="100" x="820" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="webapp" style="edgeStyle=orthogonalEdgeStyle;" target="ratelimit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="ratelimit" style="edgeStyle=orthogonalEdgeStyle;" target="coreapp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ws" edge="1" label="WebSocket&#xa;(ОСАГО результаты)" parent="1" source="webapp" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="coreapp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" label="REST" parent="1" source="coreapp" style="edgeStyle=orthogonalEdgeStyle;" target="clientinfo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="clientinfo" style="edgeStyle=orthogonalEdgeStyle;" target="clientdb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="coreapp" style="edgeStyle=orthogonalEdgeStyle;" target="coredb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" label="Transactional Outbox" parent="1" source="coreapp" style="edgeStyle=orthogonalEdgeStyle;" target="outbox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="outbox" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="outboxprocessor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" label="publish" parent="1" source="outboxprocessor" style="edgeStyle=orthogonalEdgeStyle;" target="kafka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="kafka" style="edgeStyle=orthogonalEdgeStyle;" target="topic1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="kafka" style="edgeStyle=orthogonalEdgeStyle;" target="topic2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="kafka" style="edgeStyle=orthogonalEdgeStyle;" target="topic3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" label="subscribe" parent="1" source="topic1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="coreapp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" label="subscribe" parent="1" source="topic1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="settlement">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" label="subscribe" parent="1" source="topic2" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="settlement">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" label="subscribe" parent="1" source="topic3" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="coreapp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" label="REST&#xa;(создать заявку)" parent="1" source="coreapp" style="edgeStyle=orthogonalEdgeStyle;" target="osagoaggregator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="osagoaggregator" style="edgeStyle=orthogonalEdgeStyle;" target="osagoDb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="osagoaggregator" style="edgeStyle=orthogonalEdgeStyle;" target="circuitbreaker">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="circuitbreaker" style="edgeStyle=orthogonalEdgeStyle;" target="insurers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" label="publish&#xa;osago-result" parent="1" source="osagoaggregator" style="edgeStyle=orthogonalEdgeStyle;" target="kafka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="aggregator" style="edgeStyle=orthogonalEdgeStyle;" target="insurers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="aggregator" style="edgeStyle=orthogonalEdgeStyle;" target="retry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" label="publish&#xa;products-updated" parent="1" source="aggregator" style="edgeStyle=orthogonalEdgeStyle;" target="kafka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="settlement" style="edgeStyle=orthogonalEdgeStyle;" target="settlementdb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
